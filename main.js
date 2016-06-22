@@ -1,7 +1,15 @@
-var app = angular.module('ExpansionPanel', ['ngMaterial'])
-    'ng-inject'
+var app = angular.module('training', ['ngMaterial']);
+
+    'ng-inject';
+
     app.controller('ExpansionController', function() {
         this.product = {
-            name: 'ExpansionPanel'
+            name: 'ExpansionPanelTest'
         };
+    })
+    .directive('expansionPanel', function() {
+      return {
+        restrict: 'E',
+        templateUrl: 'expansion-panel.html'
+      }
     });
