@@ -1,6 +1,7 @@
-angular.module('ExpansionPanel', ['ngMaterial'])
-    .controller('ExpansionController', ['$scope', function($scope) {
+var app = angular.module('ExpansionPanel', ['ngMaterial'])
+    'ng-inject'
+    app.controller('ExpansionController', function() {
         this.product = {
             name: 'ExpansionPanel'
         };
-    }]);
+    });
