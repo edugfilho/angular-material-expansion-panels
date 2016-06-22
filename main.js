@@ -7,9 +7,27 @@ var app = angular.module('training', ['ngMaterial']);
             name: 'ExpansionPanelTest'
         };
     })
+    .controller('PanelListCtrl', function() {
+      var self = this;
+
+      self.panelList = [];
+      self.activePanel = null;
+      self.
+    })
+    .directive('expansionPanelList', function() {
+      return {
+        scope: {
+          activePanel: '=',
+
+        },
+        controller: 'PanelListCtrl',
+        controllerAs: 'listCtrl',
+        restrict: 'E',
+        templateUrl: 'expansion-panel-list.html'
+      }
+    })
     .directive('expansionPanel', function() {
       return {
-        restrict: 'E',
         templateUrl: 'expansion-panel.html'
-      }
+      };
     });
