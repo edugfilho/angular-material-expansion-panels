@@ -10,14 +10,14 @@ var app = angular.module('training', ['ngMaterial']);
     .controller('PanelListCtrl', function() {
       var self = this;
 
-      self.panelList = [];
+      self.panels = [{id:1, name:"a"}, {id:2, name:"b"}];
       self.activePanel = null;
       self.
     })
     .directive('expansionPanelList', function() {
       return {
         controller: 'PanelListCtrl',
-        controllerAs: 'listCtrl',
+        controllerAs: 'list',
         restrict: 'E',
         templateUrl: 'expansion-panel-list.html'
       }
