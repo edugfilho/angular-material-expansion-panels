@@ -1,1 +1,19 @@
-<p>{{$item.panel.name}}</p>
+
+<md-content layout="column" ng-class="{'md-margin': }">
+  <header layout="row" layout-align="start center">
+    <div flex>
+      {{$item.panel.name}}
+    </div>
+    <md-button class="md-icon-button">
+      <md-icon>keyboard_arrow_down</md-icon>
+    </md-button>
+  </header>
+  <md-content>
+    <expansion-panel-content></expansion-panel-content>
+    <md-divider></md-divider>
+    <div layout="row" layout-align="end end" class="md-padding">
+      <md-button>Cancel</md-button>
+      <md-button class="md-raised">Save</md-button>
+  </md-content>
+</md-content>
+<md-divider></md-divider>

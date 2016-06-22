@@ -6,7 +6,7 @@ var app = angular.module('training', ['ngMaterial']);
 
       var self = this;
 
-      self.externalPanels = [{id:1, name:"a"}, {id:2, name:"b"}];
+      self.cartItems = [{id:1, name:"a"}, {id:2, name:"b"}];
 
     })
     .controller('PanelListCtrl', function() {
@@ -42,4 +42,10 @@ var app = angular.module('training', ['ngMaterial']);
         controllerAs: '$item',
         templateUrl: 'expansion-panel.html'
       };
+    })
+    .directive('expansionPanelContent', function() {
+      return {
+        restrict: 'E',
+        templateUrl: 'expansion-panel-content.html'
+      }
     });
