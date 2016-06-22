@@ -16,10 +16,6 @@ var app = angular.module('training', ['ngMaterial']);
     })
     .directive('expansionPanelList', function() {
       return {
-        scope: {
-          activePanel: '=',
-
-        },
         controller: 'PanelListCtrl',
         controllerAs: 'listCtrl',
         restrict: 'E',
@@ -28,6 +24,10 @@ var app = angular.module('training', ['ngMaterial']);
     })
     .directive('expansionPanel', function() {
       return {
+        scope: {
+          activePanel: '=',
+
+        },
         templateUrl: 'expansion-panel.html'
       };
     });
