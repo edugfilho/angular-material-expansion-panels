@@ -5,12 +5,12 @@
       <h3 class="md-body-1" flex><strong>{{$item.label}}</strong></h3>
       <h3 class="md-body-1 light-grey-text" ng-repeat="headerValue in $item.attributes track by $index" flex>{{$item.panel[headerValue]}}</h3>
     </div>
-    <md-button class="md-icon-button" ng-click="$item.expandHandler($parent.$index)">
+    <md-button class="md-icon-button" ng-click="$item.expandHandler($item.idx)">
       <md-icon>keyboard_arrow_down</md-icon>
     </md-button>
   </header>
-  <md-divider ng-show="!$item.isExpanded"></md-divider>
-  <md-content ng-if="$item.isExpanded" class="md-margin">
+
+  <md-content ng-if="$item.activePanel === $item.idx" class="md-margin">
     <expansion-panel-content></expansion-panel-content>
     <md-divider></md-divider>
     <div layout="row" layout-align="end end" class="md-padding">

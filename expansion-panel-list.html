@@ -1,1 +1,1 @@
-<expansion-panel ng-repeat="panel in $list.panels.collection" panel="panel" label="panel[$list.panels.mdPanelLabel]" attributes="$list.panels.mdPanelHeaderValues" actions="$list.panels.mdPanelActions" expand-handler="$list.controlExpandedPanel"></expansion-panel>
+<expansion-panel ng-repeat="panel in $list.panels.collection" panel="panel" label="panel[$list.panels.mdPanelLabel]" idx="$index" active-panel="$list.activePanelIdx" attributes="$list.panels.mdPanelHeaderValues" actions="$list.panels.mdPanelActions" expand-handler="$list.controlExpandedPanel"></expansion-panel>

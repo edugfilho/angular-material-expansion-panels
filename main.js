@@ -46,13 +46,19 @@ app.controller('ExpansionController', function() {
     .controller('PanelListCtrl', function() {
 
         var self = this;
-
-        self.activePanel = null;
-
+        self.activePanelIdx = -1;
         self.controlExpandedPanel = function(idx) {
-          //self.activePanel = index;
+          if(self.activePanelIdx === -1) {
+            self.activePanelIdx = idx;
+          }
+          else if(idx === self.activePanelIdx) {
+            self.activePanelIdx = -1;
+          }
+          else if(idx !== self.activePanelIdx) {
+            self.activePanelIdx = idx;
+          }
           console.log(idx);
-        }
+        };
 
     })
     .directive('expansionPanelList', function() {
@@ -69,7 +75,8 @@ app.controller('ExpansionController', function() {
     })
     .controller('ExpansionPanelController', function() {
         var self = this;
-        self.isExpanded = false;
+        console.log(self.idx);
+        console.log(this.activePanel);
     })
     .directive('expansionPanel', function() {
         return {
@@ -79,6 +86,8 @@ app.controller('ExpansionController', function() {
                 label: '=',
                 attributes: '=',
                 expandHandler: '=',
+                idx: '=',
+                activePanel: '=',
                 actions: '='
             },
             bindToController: true,
